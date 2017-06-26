@@ -329,7 +329,6 @@ Request for modify campaign status
 
 Response for modify campaign status
 ```javascript
-
 {
     "code": 0,
     "msg": "SUCCESS",
