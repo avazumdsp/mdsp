@@ -292,7 +292,7 @@ Response for get campaign status
 |data[]||Yes|Array||
 ||id|Yes|String|Campaign id|
 ||status||int|Campaign status|
-||bidprice|Yes|int|Campaign bid price<br>|
+||bidprice||int|Campaign bid price<br>|
 
 ##### 2.3 Response Object
 
