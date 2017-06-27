@@ -1,13 +1,15 @@
-# Introduction
+## Contents
+
+* [Introduction](#introduction)
+* [Authentication](#authentication)
+* [Reporting API](#reporting-api)
+* [Campaign API](#campaign-api)
+* [Changelog](#changelog)
+
+## Introduction
 
 In order to grab information through the API, the client must first be granted access, using your client id and secret to get your reporting access token. Do not share your client id and secret with external parties you do not want having access to all your data.
 
-
-## Contents
-
-* [Authentication](#authentication)
-* [Reporting API](#reportingapi)
-* [Campaign API](#campaignapi)
 
 ## Authentication
 
@@ -347,3 +349,5 @@ Response for modify campaign status
     "data": {"12345":true,"12346":false,"12347":true}
 }
 ```
+
+# Changelog
