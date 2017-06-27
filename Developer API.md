@@ -6,8 +6,8 @@ In order to grab information through the API, the client must first be granted a
 ## Contents
 
 * [Authentication](#authentication)
-* [Reporting API](#reporting-API)
-* [Campaign API](#campaign-API)
+* [Reporting API](#reportingapi)
+* [Campaign API](#campaignapi)
 
 ## Authentication
 
