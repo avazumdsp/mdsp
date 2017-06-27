@@ -68,6 +68,7 @@ In order to grab information through the API, the client must first be granted a
 |page||No|int|Page number currently displayed|
 |pagemaxcount||No|int|Maximum items of each page|
 |data[]||Yes|Array||
+||date|Yes|String|Timezone: UTC<br>Format: YYYY-MM-DD|
 ||campaign_id|No|String|Campaign id|
 ||creative_id|No|String|Creative id|
 ||impressions|Yes|String|Total amount of impressions|
@@ -100,7 +101,7 @@ Request for **user** dimension reports
     "access_token": "372ea8dade94379ab44f59d80c137fdb2fd937f4",
     "command": "user",
     "startdate": "2016-01-01",
-    "enddate":"2016-01-07"
+    "enddate":"2016-01-02"
 }
 ```
 
@@ -109,12 +110,23 @@ Response for **user** dimension reports
 {
     "code": 0,
     "msg": "SUCCESS",
-    "data": {
+    "totalcount": 2,
+    "data": [
+        {
+        "date":"2016-01-01",
         "impressions": "5575",
         "clicks": "11",
         "conversions": "0",
         "spend": "13.11"
-    }
+        },
+        {
+        "date":"2016-01-02",
+        "impressions": "5575",
+        "clicks": "11",
+        "conversions": "0",
+        "spend": "13.11"
+        }
+    ]
 }
 ```
 
@@ -124,7 +136,7 @@ Request for **campaign** dimension reports
     "access_token": "372ea8dade94379ab44f59d80c137fdb2fd937f4",
     "command": "campaign",
     "startdate": "2016-01-01", 
-    "enddate":"2016-01-07"
+    "enddate":"2016-01-02"
 }
 ```
 
@@ -138,6 +150,7 @@ Response for **campaign** dimension reports
     "pagemaxcount": 100,
     "data": [
         {
+            "date":"2016-01-01",
             "campaign_id": "36168",
             "impressions": "5574",
             "clicks": "11",
@@ -146,6 +159,7 @@ Response for **campaign** dimension reports
             "campaign_name": "test publisher"
         },
         {
+            "date":"2016-01-01",
             "campaign_id": "36213",
             "impressions": "0",
             "clicks": "0",
@@ -164,7 +178,7 @@ Request for **creative** dimension reports (group by geo)
     "command": "creative",
     "groupby": "geo",
     "startdate": "2016-01-01",
-    "enddate":"2016-01-07"
+    "enddate":"2016-01-02"
 }
 ```
 
@@ -178,6 +192,7 @@ Response for **creative** dimension reports (group by geo)
     "pagemaxcount": 100,
     "data": [
         {
+            "date":"2016-01-01",
             "campaign_id": "36168",
             "creative_id": "281825",
             "impressions": "5574",
@@ -189,6 +204,7 @@ Response for **creative** dimension reports (group by geo)
             "geo_name": "United States"
         },
         {
+            "date":"2016-01-01",
             "campaign_id": 36168,
             "creative_id": 281826,
             "impressions": "1110",
