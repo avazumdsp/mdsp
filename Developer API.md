@@ -50,7 +50,7 @@ In order to grab information through the API, the client must first be granted a
 |----------|----------|----------|----------|
 |access_token|Yes|String|The access token issued by Avazu authorization server.|
 |command|Yes|String|Reports dimensions, can be one of the following value:<br>"user"<br>"campaign"<br>"creative"|
-|startdate|Yes|String|Timezone: UTC<br>Format: YYYY-MM-DD<br>the date range from startdate to the current date must be less than or equal to 180 days.|
+|startdate|Yes|String|Timezone: UTC<br>Format: YYYY-MM-DD<br>The date range from startdate to the current date must be less than or equal to 180 days.|
 |enddate|Yes|String|Timezone: UTC<br>Format: YYYY-MM-DD<br>Enddate must be larger than or equal to startdate, and the date range from the startdate to the end date must be less than or equal to 30 days.|
 |id|No|String|ID of the campaign or creative.|
 |groupby|No|String|Which variable will be grouped by, note that "groupby" filed only for campiagn and creative dimension reports, can be one of the following value:<br>Value -- Description<br>creative -- creative<br>geo -- country<br>city -- city<br>gender --  gender<br>carrier -- carrier<br>isp -- isp<br>device -- device<br>devicetype -- device type<br>browser -- mobile browser<br>os -- operation system<br>osv -- operation system version<br>connection -- connection type<br>inventory -- inventory<br>publisher -- publisher(seller)<br>site -- site<br>inventorytype -- inventory type|
