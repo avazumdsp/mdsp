@@ -53,7 +53,7 @@ In order to grab information through the API, the client must first be granted a
 |startdate|Yes|String|Timezone: UTC<br>Format: YYYY-MM-DD<br>the date range from startdate to the current date must be less than or equal to 180 days.|
 |enddate|Yes|String|Timezone: UTC<br>Format: YYYY-MM-DD<br>Enddate must be larger than or equal to startdate, and the date range from the startdate to the end date must be less than or equal to 30 days.|
 |id|No|String|ID of the campaign or creative.|
-|groupby|No|String|Which variable will be grouped by, note that "groupby" filed only for campiagn and creative dimension reports, can be one of the following value:<br>Value--Description<br>creative--creative<br>geo--country<br>city--city<br>gender--gender<br>carrier--carrier<br>isp--isp<br>device--device<br>devicetype--device type<br>browser--mobile browser<br>os--operation system<br>osv--operation system version<br>connection--connection type<br>inventory--inventory<br>publisher--publisher(seller)<br>site--site<br>inventorytype--inventory type|
+|groupby|No|String|Which variable will be grouped by, note that "groupby" filed only for campiagn and creative dimension reports, can be one of the following value:<br>Value -- Description<br>creative -- creative<br>geo -- country<br>city -- city<br>gender --  gender<br>carrier -- carrier<br>isp -- isp<br>device -- device<br>devicetype -- device type<br>browser -- mobile browser<br>os -- operation system<br>osv -- operation system version<br>connection -- connection type<br>inventory -- inventory<br>publisher -- publisher(seller)<br>site -- site<br>inventorytype -- inventory type|
 |page|No|int|Each page contains a maximum 100 items. Default value is 1. (Note that "page" field only for campaign and creative dimension reports)|
 
 ##### 3 Response Object
@@ -228,8 +228,8 @@ Response for **creative** dimension reports (group by geo)
 |command|Yes|String|Use the following value to get all campaigns status:<br>"get"|
 |page|Yes|int|Page number currently displayed|
 |pagecount|Yes|int|Maximum items of each page|
-|status|Yes|int|Campaign status<br>Value--Status<br>1--Active<br>0--Inactive|
-|bidtype||int|Campaign bid type<br>Value--Bid Type<br>0--CPM<br>1--CPM optimized towards to an eCPC<br>2--CPM optimized towards to a CTR<br>3--CPM optimized towards to a CPA<br>4--CPC<br>11--CPA|
+|status|Yes|int|Campaign status<br>Value -- Status<br>1 -- Active<br>0 -- Inactive|
+|bidtype||int|Campaign bid type<br>Value -- Bid Type<br>0 -- CPM<br>1 -- CPM optimized towards to an eCPC<br>2 -- CPM optimized towards to a CTR<br>3 -- CPM optimized towards to a CPA<br>4 -- CPC<br>11 -- CPA|
 
 ##### 1.3 Response Object
 
@@ -241,7 +241,7 @@ Response for **creative** dimension reports (group by geo)
 ||id|Yes|String|Campaign id|
 ||name|Yes|String|Campaign name|
 ||status|Yes|int|Campaign status<br>Value--Status<br>1--Active<br>0--Inactive|
-||bidtype|Yes|int|Campaign bid type<br>Value--Bid Type<br>0--CPM<br>1--CPM optimized towards to an eCPC<br>2--CPM optimized towards to a CTR<br>3--CPM optimized towards to a CPA<br>4--CPC<br>11--CPA|
+||bidtype|Yes|int|Campaign bid type<br>Value -- Bid Type<br>0 -- CPM<br>1 -- CPM optimized towards to an eCPC<br>2 -- CPM optimized towards to a CTR<br>3 -- CPM optimized towards to a CPA<br>4 -- CPC<br>11 -- CPA|
 ||bidprice|Yes|int|Campaign bid price<br>e.g.: Bid Price = 1000000<br>Tip: $1 (USD) = 1000000|
 
 ##### 1.4 Sample
@@ -298,7 +298,7 @@ Response for get campaign status
 |data[]||Yes|Array||
 ||id|Yes|String|Campaign id|
 ||status||int|Campaign status<br>Value--Status<br>1--Active<br>0--Inactive|
-||bidprice||int|Campaign bid price<br>Value--Bid Type--Available Minimum Bid Price--Available Maximum Bid Price<br>0--CPM--30000--20000000<br>1--CPM optimized towards to an eCPC--30000--20000000<br>2--CPM optimized towards to a CTR--30000--20000000<br>3--CPM optimized towards to a CPA--30000--20000000<br>4--CPC--3000--5000000<br>11--CPA--100000--10000000|
+||bidprice||int|Campaign bid price<br>Value--Bid Type--Available Minimum Bid Price--Available Maximum Bid Price<br>0 -- CPM-- 30000 --20000000<br>1 -- CPM optimized towards to an eCPC -- 30000 --20000000<br>2 -- CPM optimized towards to a CTR -- 30000--20000000<br>3 -- CPM optimized towards to a CPA -- 30000 --20000000<br>4 -- CPC -- 3000--5000000<br>11 -- CPA -- 100000 --10000000|
 
 ##### 2.3 Response Object
 
@@ -342,4 +342,10 @@ Response for modify campaign status
 }
 ```
 
-# Changelog
+## Changelog
+|Version |Date |Update |
+|----------|----------|----------|
+|1.0.1|May 20th,2016|Completed the first version of Avazu mDSP Developer API Documentation.|
+|1.0.2|May 4th,2017|Added campaign status API.|
+|1.0.3|June 2nd,2017|Added campaign status API.|
+|1.0.3.1|May 26th,2016|Modified Date to Date range for Reporting API<br>Modified campaign maximum bid price|
