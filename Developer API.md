@@ -229,7 +229,7 @@ Response for **creative** dimension reports (group by geo)
 |page|Yes|int|Page number currently displayed|
 |pagecount|Yes|int|Maximum items of each page|
 |status|Yes|int|Campaign status<br>Value -- Status<br>1 -- Active<br>0 -- Inactive|
-|bidtype||int|Campaign bid type<br>Value -- Bid Type<br>0 -- CPM<br>1 -- CPM optimized towards to an eCPC<br>2 -- CPM optimized towards to a CTR<br>3 -- CPM optimized towards to a CPA<br>4 -- CPC<br>11 -- CPA|
+|bidtype|No|int|Campaign bid type<br>Value -- Bid Type<br>0 -- CPM<br>1 -- CPM optimized towards to an eCPC<br>2 -- CPM optimized towards to a CTR<br>3 -- CPM optimized towards to a CPA<br>4 -- CPC<br>11 -- CPA|
 
 ##### 1.3 Response Object
 
@@ -297,8 +297,8 @@ Response for get campaign status
 |command||Yes|String|Use the following value to modify campaign status:<br>"update"|
 |data[]||Yes|Array||
 ||id|Yes|String|Campaign id|
-||status||int|Campaign status<br>Value--Status<br>1--Active<br>0--Inactive|
-||bidprice||int|Campaign bid price<br>Value--Bid Type--Available Minimum Bid Price--Available Maximum Bid Price<br>0 -- CPM-- 30000 --20000000<br>1 -- CPM optimized towards to an eCPC -- 30000 --20000000<br>2 -- CPM optimized towards to a CTR -- 30000--20000000<br>3 -- CPM optimized towards to a CPA -- 30000 --20000000<br>4 -- CPC -- 3000--5000000<br>11 -- CPA -- 100000 --10000000|
+||status|No|int|Campaign status<br>Value--Status<br>1--Active<br>0--Inactive|
+||bidprice|No|int|Campaign bid price<br>Value--Bid Type--Available Minimum Bid Price--Available Maximum Bid Price<br>0 -- CPM-- 30000 --20000000<br>1 -- CPM optimized towards to an eCPC -- 30000 --20000000<br>2 -- CPM optimized towards to a CTR -- 30000--20000000<br>3 -- CPM optimized towards to a CPA -- 30000 --20000000<br>4 -- CPC -- 3000--5000000<br>11 -- CPA -- 100000 --10000000|
 
 ##### 2.3 Response Object
 
