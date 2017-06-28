@@ -298,7 +298,7 @@ Response for get campaign status
 |data[]||Yes|Array||
 ||id|Yes|String|Campaign id|
 ||status|No|int|Campaign status<br>Value--Status<br>1--Active<br>0--Inactive|
-||bidprice|No|int|Campaign bid price<br>Value--Bid Type--Available Minimum Bid Price--Available Maximum Bid Price<br>0 -- CPM-- 30000 --20000000<br>1 -- CPM optimized towards to an eCPC -- 30000 --20000000<br>2 -- CPM optimized towards to a CTR -- 30000--20000000<br>3 -- CPM optimized towards to a CPA -- 30000 --20000000<br>4 -- CPC -- 3000--5000000<br>11 -- CPA -- 100000 --10000000|
+||bidprice|No|int|Campaign bid price<br>Value--Bid Type--Available Min Bid Price--Available Max Bid Price<br>0 -- CPM-- 30000 --20000000<br>1 -- CPM optimized towards to an eCPC -- 30000 --20000000<br>2 -- CPM optimized towards to a CTR -- 30000--20000000<br>3 -- CPM optimized towards to a CPA -- 30000 --20000000<br>4 -- CPC -- 3000--5000000<br>11 -- CPA -- 100000 --10000000|
 
 ##### 2.3 Response Object
 
