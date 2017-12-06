@@ -357,7 +357,7 @@ Response for modify campaign status
 |----------|----------|----------|----------|----------|
 |access_token||Yes|string|The access token issued by Avazu authorization server.|
 |command||Yes|string|Use the following value to include/exclude<br>apps/sites<br>"add"<br>"delete"|
-|data[]||Array||
+|data[]||Yes|Array||
 ||campaign_id|Yes|int|id of campaign that want to make changes|
 ||op_type|Yes|int|operation type<br>Value--Status<br>1--include<br>0--exclude|
 ||inventory_id|Yes|int|inventory id of the apps/sites belong
