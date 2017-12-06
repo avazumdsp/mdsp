@@ -341,6 +341,59 @@ Response for modify campaign status
     "data": {"12345":true,"12346":false,"12347":true}
 }
 ```
+## Targeting API
+
+### 1 Include/Exclude Apps/Sites API
+
+##### 1.1 Request Endpoint
+
+|HTTP Method |Endpoint |
+|----------|----------|
+|Post |http://api.mdsp.avazutracking.net/targeting |
+
+##### 1.2 Request Object
+
+|Field ||Required |Type |Description |
+|----------|----------|----------|----------|----------|
+|access_token||Yes|string|The access token issued by Avazu authorization server.|
+|command||Yes|string|Use the following value to include/exclude<br>apps/sites<br>"add"<br>"delete"|
+|data[]||Array||
+||campaign_id|Yes|int|id of campaign that want to make changes|
+||op_type|Yes|int|operation type<br>Value--Status<br>1--include<br>0--exclude|
+||inventory_id|Yes|int|inventory id of the apps/sites belong
+||site_id|Yes|string|1 app/site id or an array of apps/sites' ids<br>11111<br>aaabbcc|
+
+##### 1.3 Sample
+Request for include/exclude apps/sites
+```javascript
+{
+    "access_token": "372ea8dade94379ab44f59d80c137fdb2fd937f4",
+    "command": "add",
+    "data": [
+        {
+            "campaign_id": "12345",
+            "op_type": 1,
+            "inventory_id":1001
+            "site_id": 114855
+        },
+        {
+            "campaign_id": "23456",
+            "op_type": 0,
+            "inventory_id":1002
+            "site_id": "d75125188e1f647a"
+        },
+    ]
+}
+```
+Request for include/exclude apps/sites
+```javascript
+{
+    "code": 0,
+    "msg": "SUCCESS",
+    "data": {"12345","1001","114855"}
+}
+```
+
 
 ## Changelog
 |Version |Date |Update |
@@ -349,3 +402,4 @@ Response for modify campaign status
 |1.0.2|May 4th,2017|Added campaign status API.|
 |1.0.3|June 2nd,2017|Added campaign status API.|
 |1.0.3.1|May 26th,2016|Modified Date to Date range for Reporting API<br>Modified campaign maximum bid price|
+|1.0.4|Dec 7th,2017|Added Include/Exclude Apps/sites Campaign API|
