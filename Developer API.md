@@ -4,6 +4,7 @@
 * [Authentication](#authentication)
 * [Reporting API](#reporting-api)
 * [Campaign API](#campaign-api)
+* [Targeting API](#targeting-api)
 * [Changelog](#changelog)
 
 ## Introduction
@@ -361,7 +362,7 @@ Response for modify campaign status
 ||campaign_id|Yes|int|id of campaign that want to make changes|
 ||op_type|Yes|int|operation type<br>Value--Status<br>1--include<br>0--exclude|
 ||inventory_id|Yes|int|inventory id of the apps/sites belong
-||site_id|Yes|string|1 app/site id or an array of apps/sites' ids<br>11111<br>aaabbcc|
+||site_id|Yes|string|app/site id<br>11111<br>aaabbcc|
 
 ##### 1.3 Sample
 Request for include/exclude apps/sites
