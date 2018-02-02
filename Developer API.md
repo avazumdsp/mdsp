@@ -386,7 +386,7 @@ Request for include/exclude apps/sites
     ]
 }
 ```
-Request for include/exclude apps/sites
+Response for include/exclude apps/sites
 ```javascript
 {
     "code": 0,
