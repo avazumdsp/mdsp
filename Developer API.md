@@ -73,7 +73,7 @@ In order to grab information through the API, the client must first be granted a
 ||impressions|Yes|String|Total amount of impressions|
 ||clicks|Yes|String|Total amount of clicks|
 ||conversions|Yes|String|Total amount of conversions|
-||impressions|Yes|float|Total amount of money spent, in US Dollars|
+||spend|Yes|float|Total amount of money spent, in US Dollars|
 ||campaign_name|No|String|Campaign name|
 ||creative_name|No|String|Creative name|
 ||geo_name|No|String|Country name|
