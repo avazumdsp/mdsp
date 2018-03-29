@@ -89,8 +89,10 @@ In order to grab information through the API, the client must first be granted a
 ||osv|No|String|OS version name|
 ||connection_name|No|String|Connection type name|
 ||inventory_name|No|String|Inventory type name|
+||inventory_id|No|String|Inventory id|
 ||publisher_name|No|String|Publisher(Seller) name|
 ||site_name|No|String|Site name|
+||site_id|No|String|Site id|
 ||inventorytype_name|No|String|Inventory type name|
 
 ##### 4 Sample
