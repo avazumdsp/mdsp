@@ -376,15 +376,15 @@ Request for include/exclude apps/sites
         {
             "campaign_id": "12345",
             "op_type": 1,
-            "inventory_id":1001
+            "inventory_id":1001,
             "site_id": 114855
         },
         {
             "campaign_id": "23456",
             "op_type": 0,
-            "inventory_id":1002
+            "inventory_id":1002,
             "site_id": "d75125188e1f647a"
-        },
+        }
     ]
 }
 ```
