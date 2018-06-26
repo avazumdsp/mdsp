@@ -56,6 +56,7 @@ In order to grab information through the API, the client must first be granted a
 |id|No|String|ID of the campaign or creative.|
 |groupby|No|String|Which variable will be grouped by, note that "groupby" filed only for campiagn and creative dimension reports, can be one of the following value:<br>Value -- Description<br>creative -- creative<br>geo -- country<br>city -- city<br>gender --  gender<br>carrier -- carrier<br>isp -- isp<br>device -- device<br>devicetype -- device type<br>browser -- mobile browser<br>os -- operation system<br>osv -- operation system version<br>connection -- connection type<br>inventory -- inventory<br>publisher -- publisher(seller)<br>site -- site<br>inventorytype -- inventory type|
 |page|No|int|Each page contains a maximum 100 items. Default value is 1. (Note that "page" field only for campaign and creative dimension reports)|
+|hour_offset|No|int|Hour offset for timezone shifting based on UTC<br />Range：-12~12<br /> eg.  If you would like to fetch reporting data in  Eastern Standard Time  (UTC-0500), use an hour_offset value of "-5" . The timestamps will shift by -5 hours while still maintaining the date range.<br />When using the hour_offset, the response data  for campaign/creative dimension reports will be separated in hours.|
 
 ##### 3 Response Object
 
@@ -67,7 +68,8 @@ In order to grab information through the API, the client must first be granted a
 |page||No|int|Page number currently displayed|
 |pagemaxcount||No|int|Maximum items of each page|
 |data[]||Yes|Array||
-||date|No|String|Timezone: UTC<br>Format: YYYY-MM-DD<br>Note that the field "date" only for campaign and creative dimension reports|
+||date|No|String|Timezone: UTC<br>Format: YYYY-MM-DD<br>Note that the field "date" only for campaign and creative dimension reports without "hour_offset"|
+||date_hour|No|String|Timezone: UTC <br />Format: YYYY-MM-DD HH:00 <br />Note that the field "date_hour" only for campaign and creative dimension reports with "hour_offset"<br />HH is range from 00 to 23, 00:00 represent the data from 00:00 to 00:59|
 ||campaign_id|No|String|Campaign id|
 ||creative_id|No|String|Creative id|
 ||impressions|Yes|String|Total amount of impressions|
@@ -161,6 +163,49 @@ Response for **campaign** dimension reports
             "campaign_name": "sma"
         }
     ]
+}
+```
+
+Request for **campaign** dimension reports with hour_offset
+```javascript
+{
+    "access_token": "372ea8dade94379ab44f59d80c137fdb2fd937f4",
+    "command": "campaign",
+    "startdate": "2016-01-01", 
+    "enddate":"2016-01-02",
+    "hour_offset":"-5",
+    "id":"37047"
+}
+```
+
+Response for **campaign** dimension reports with hour_offset
+```javascript
+{
+   "code": 0,
+  "msg": "SUCCESS",
+  "totalcount": 2,
+  "page": 1,
+  "pagemaxcount": 100,
+  "data": [
+    {
+      "campaign_id": "37047",
+      "impressions": "3",
+      "clicks": "0",
+      "conversions": "0",
+      "spend": "0.01",
+      "date_hour": "2016-01-01 12:00",
+      "campaign_name": "admedia  banner test "
+    },
+    {
+      "campaign_id": "37047",
+      "impressions": "1",
+      "clicks": "0",
+      "conversions": "0",
+      "spend": "0.00",
+      "date_hour": "2016-01-02 14:00",
+      "campaign_name": "admedia  banner test "
+    }
+  ]
 }
 ```
 
@@ -406,3 +451,4 @@ Response for include/exclude apps/sites
 |1.0.3|June 2nd,2017|Added campaign status API.|
 |1.0.3.1|May 26th,2016|Modified Date to Date range for Reporting API<br>Modified campaign maximum bid price|
 |1.0.4|Dec 7th,2017|Added Include/Exclude Apps/sites Campaign API|
+|1.0.5|June 26th,2018|Added hour_offset for Reporting API|
